@@ -56,7 +56,7 @@ ASSEMBLIES:
 # METHODS DATA
 PIPELINES:  # add below name of the tools used for the assembly and curation steps, with versions and key parameters selected
   Assembly:
-    NBISweden/Earth-Biogenome-Project-pilot: 'commit:85e04ded1d'
+    NBISweden/Earth-Biogenome-Project-pilot: 'commit:85e04ded1d/--input assembly_parameters.yml/--steps "inspect,preprocess,assemble,screen,purge,scaffold"/--use_phased true/--hifiasm_with_hic true/--oatkdb "/proj/snic2021-6-194/nobackup/database-cache/OatkDB/v20230921"/--busco.lineages_db_path "/sw/data/BUSCO_data/latest/rackham/v5_lineage_sets"'
     Hifiasm: '0.25.0-r726/--h1/--h2'
     purge_dups: '1.2.5/'
     YaHS: '1.2a.1/--no-contig-ec'
@@ -76,5 +76,5 @@ NOTES:
   Obs_Haploid_num: 9 # integer
   Obs_Sex: Hermaphrodite  # for example: XX, XY, X0, ZZ, ZW, unknown, NA
   Interventions_per_Gb: 98  # integer or empty
-  Contamination_notes: "The organism was moderately contaminated. Contaminants identified using Tiara and Blobtoolkit were found in the contact map and grouped with other contigs with high contact frequency. These blocks were then removed as contaminants. Other contigs with minimal contact frequency to organism scaffolds and contigs were also removed in this way."  # text in quotes "", related to the decontamination process, FCS-GX findings, or presence of plastids or symbionts
-  Other_notes: "SciLifeLab Hi-C was insufficient for scaffolding or curation. The Sanger Hi-C library ERR10501018 was used instead for scaffolding and manual curation, followed by remapping of the SciLifeLab Hi-C library and a final manual curation check. When performing manual curation with the Sanger Hi-C library ( different individual ), signal breaks within contigs were ignored, preferring to trust the HiFi data. Unfortunately the SciLifeLab Hi-C library couldn't be used to correct this, and was only effectively used for contamination checks."  # text in quotes "", related to sample characteristics and quality, the curation process, etc
+  Contamination_notes: "The organism was moderately contaminated. Initial screening was performed with Tiara and BlobToolKit. Those contaminants were identified in the Hi-C contact map and clustered with other contigs showing high contact frequency. These blocks, along with other contigs showing minimal contact frequency to the primary scaffolds, were removed from the assembly."  # text in quotes "", related to the decontamination process, FCS-GX findings, or presence of plastids or symbionts
+  Other_notes: "The Sanger Hi-C library (ERR10501018) was used for scaffolding and manual curation after the SciLifeLab library proved insufficient. SciLifeLab data was subsequently remapped for final validation. Because the Sanger library used a different individual, signal breaks within contigs were ignored to prioritize HiFi data accuracy. The SciLifeLab library was used primarily for contamination checks."  # text in quotes "", related to sample characteristics and quality, the curation process, etc
