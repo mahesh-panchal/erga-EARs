@@ -1,0 +1,80 @@
+# This is the yaml (v24.09.10) file for generating the ERGA Assembly Report (EAR) using the make_EAR.py (v24.09.10) script
+# Please complete the required information pointed as <Insert ...>
+# The file example/mEleMax1_example.yaml contains an example of a completed yaml file
+
+# SAMPLE INFORMATION
+ToLID: kaClaLepa1
+Species: Clavelina lepadiformis
+Sex: Hermaphrodite  # for example: XX, XY, X0, ZZ, ZW, unknown, NA
+Submitter: Mahesh Binzer-Panchal
+Affiliation: SciLifeLab
+Tags: ERGA-BGE  # valid tags are ERGA-BGE, ERGA-Pilot, ERGA-Community
+
+
+# SEQUENCING DATA
+DATA:  # add below name of available data and coverage
+  - PacBio: 259  # if coverage is not available, leave it empty
+  - Hi-C: 226
+  - Hi-C_ERR10501018: 869
+
+
+# GENOME PROFILING DATA
+PROFILING:
+  GenomeScope:
+    genomescope_summary_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/01_read_inspection/genescopefk/Clavelina_lepadiformis_summary.txt'
+
+
+# ASSEMBLY DATA
+ASSEMBLIES:
+  Pre-curation:
+    hap1:  # valid types are hap1, pri, collapsed
+      gfastats--nstar-report_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/gfastats/hifiasm-scaffolded-default/Clavelina_lepadiformis_hifiasm-scaffolded-default_hap1_scaffolds_final.assembly_summary'
+      busco_short_summary_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/busco/hifiasm-scaffolded-default/short_summary.specific.metazoa_odb10.Clavelina_lepadiformis_hifiasm-scaffolded-default_hap1_scaffolds_final.fa.txt'
+      merqury_folder: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/merquryfk/hifiasm-scaffolded-default'
+    hap2:  # Only if hap2 is available. Otherwise remove the <Insert another haplotype> section
+      gfastats--nstar-report_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/gfastats/hifiasm-scaffolded-default/Clavelina_lepadiformis_hifiasm-scaffolded-default_hap2_scaffolds_final.assembly_summary'
+      busco_short_summary_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/busco/hifiasm-scaffolded-default/short_summary.specific.metazoa_odb10.Clavelina_lepadiformis_hifiasm-scaffolded-default_hap2_scaffolds_final.fa.txt'
+      merqury_folder: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/11_ebp-assembly-workflow-coverage-130x-with-sanger-hic/07_scaffolding/merquryfk/hifiasm-scaffolded-default'
+
+  Curated:
+    hap1:  # valid types are hap1, pri, collapsed
+      gfastats--nstar-report_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap1/gfastats/kaClaLepa1.assembly_summary'
+      busco_short_summary_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap1/btk/results/busco/metazoa_odb10/short_summary.txt'
+      merqury_folder: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap1/merquryfk'
+      hic_FullMap_png: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap1/cpretext/results/pretext_snapshot/kaClaLepa1_normalFullMap.png'  # also can be a HiC full contact map PNG from higlass
+      hic_FullMap_link: 'https://export.uppmax.uu.se/snic2021-6-194/ERGA/kaClaLepa1'  # also can be a web folder with .mcool from higlass
+      blobplot_cont_png: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap1/btk/results/blobtoolkit/plots/kaClaLepa1.hap1.2.primary.curated.blob.png'
+    hap2:  # Only if hap2 is available. Otherwise remove the <Insert another haplotype> section
+      gfastats--nstar-report_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap2/gfastats/kaClaLepa1.assembly_summary'
+      busco_short_summary_txt: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap2/btk/results/busco/metazoa_odb10/short_summary.txt'
+      merqury_folder: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap2/merquryfk'
+      hic_FullMap_png: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap2/cpretext/results/pretext_snapshot/kaClaLepa1_normalFullMap.png'  # also can be a HiC full contact map PNG from higlass
+      hic_FullMap_link: 'https://export.uppmax.uu.se/snic2021-6-194/ERGA/kaClaLepa1'  # also can be a web folder with .mcool from higlass
+      blobplot_cont_png: '/proj/snic2021-6-194/BGE-Clavelina_lepadiformis-2025-assembly/data/outputs/14_ear2-130x-with-scilife-hic-hap2/btk/results/blobtoolkit/plots/kaClaLepa1.hap2.2.primary.curated.blob.png'
+
+
+# METHODS DATA
+PIPELINES:  # add below name of the tools used for the assembly and curation steps, with versions and key parameters selected
+  Assembly:
+    NBISweden/Earth-Biogenome-Project-pilot: 'commit:85e04ded1d'
+    Hifiasm: '0.25.0-r726/ <add params>'
+    purge_dups: '1.2.5/ <add params>'
+    YaHS: '1.2a.1/ <add params>'
+    FCSGX: '0.5.4'
+    Mitohifi: '3.0.0'
+
+  Curation:
+    sanger-tol/curationpretext: '1.5.1'
+    sanger-tol/blobtoolkit: '0.9.0'
+    PretextView: '1.0.4'
+    sanger-tol/agp-tpf-utils: 'commit: 35ea45dbcd8f3ece7a91104e5813541b55beb2ff'
+    sanger-tol/sanger-tol-ear: 'commit: 2b15915ec8'
+
+
+# CURATION NOTES
+NOTES:
+  Obs_Haploid_num: 9 # integer
+  Obs_Sex: Hermaphrodite  # for example: XX, XY, X0, ZZ, ZW, unknown, NA
+  Interventions_per_Gb: 98  # integer or empty
+  Contamination_notes: "The organism was moderately contaminated. Contaminants identified using Tiara and Blobtoolkit were found in the contact map and grouped with other contigs with high contact frequency. These blocks were then removed as contaminants. Other contigs with minimal contact frequency to organism scaffolds and contigs were also removed in this way."  # text in quotes "", related to the decontamination process, FCS-GX findings, or presence of plastids or symbionts
+  Other_notes: "SciLifeLab Hi-C was insufficient for scaffolding or curation. The Sanger Hi-C library ERR10501018 was used instead for scaffolding and manual curation, followed by remapping of the SciLifeLab Hi-C library and a final manual curation check. When performing manual curation with the Sanger Hi-C library ( different individual ), signal breaks within contigs were ignored, preferring to trust the HiFi data. Unfortunately the SciLifeLab Hi-C library couldn't be used to correct this, and was only effectively used for contamination checks."  # text in quotes "", related to sample characteristics and quality, the curation process, etc
