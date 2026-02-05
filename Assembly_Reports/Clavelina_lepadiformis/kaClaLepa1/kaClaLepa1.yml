@@ -57,11 +57,11 @@ ASSEMBLIES:
 PIPELINES:  # add below name of the tools used for the assembly and curation steps, with versions and key parameters selected
   Assembly:
     NBISweden/Earth-Biogenome-Project-pilot: 'commit:85e04ded1d'
-    Hifiasm: '0.25.0-r726/ <add params>'
-    purge_dups: '1.2.5/ <add params>'
-    YaHS: '1.2a.1/ <add params>'
+    Hifiasm: '0.25.0-r726/--h1/--h2'
+    purge_dups: '1.2.5/'
+    YaHS: '1.2a.1/--no-contig-ec'
     FCSGX: '0.5.4'
-    Mitohifi: '3.0.0'
+    Mitohifi: '3.0.0/-o 13'
 
   Curation:
     sanger-tol/curationpretext: '1.5.1'
